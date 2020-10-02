@@ -1,0 +1,126 @@
+body {
+    display: grid;
+    grid-template-rows: 50px 150px 400px 50px;
+    grid-gap: 10px;
+    grid-template-areas:
+    "hed"
+    "hero"
+    "main"
+    "foot";
+}
+
+    body > header {
+        background-color: #eee;
+        grid-area: hed;
+        display: inline-grid;
+        grid-template-columns: 200px 1fr 300px;
+        gap: 10px;
+        grid-template-areas:
+        "logo nav social";
+    }
+        body > header > .logo {
+            background-color: lightcoral;
+            grid-area: logo;
+        }
+        body > header > .nav {
+            background-color: lightcoral;
+            grid-area: nav;
+        }
+        body > header > .social {
+            background-color: lightcoral;
+            grid-area: social;
+        }
+
+
+    body > .hero {
+        background-color: lightpink;
+        grid-area: hero;
+    }
+
+    body > main {
+        /* background-color: lightblue; */
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        gap: 10px;
+        grid-template-areas:
+        "main-left aside";
+
+    }
+        body > main > .main-left{
+            /* background-color: lightsalmon; */
+            grid-area: main-left;
+            display: grid;
+            grid-template-rows: 1fr 1fr 50px;
+            gap: 10px;
+            grid-template-areas:
+            "test"
+            "services"
+            "freelance";  
+        }
+            body > main > .main-left > .testimonials {
+                grid-area: test;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                grid-template-areas:
+                "test-hed test-hed"
+                "test-box1 test-box2";
+            }
+                body > main > .main-left > .testimonials > .testimonials-header {
+                    grid-area: test-hed;
+                    background-color: rgb(248, 248, 176);
+                }
+
+
+                body > main > .main-left > .testimonials > .testimonials-box1 {
+                    grid-area: test-box1;
+                    background-color: lightcyan;
+                }
+
+                body > main > .main-left > .testimonials > .testimonials-box2 {
+                    grid-area: test-box2;
+                    background-color: lightcyan;
+                }
+
+            body > main > .main-left > .services {
+                grid-area: services;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+                grid-template-areas:
+                "serv-hed serv-hed serv-hed"
+                "serv-box1 serv-box2 serv-box3";
+                
+            }
+                body > main > .main-left > .services > .services-header {
+                    grid-area: serv-hed; 
+                    background-color: rgb(248, 248, 176);
+                }
+                body > main > .main-left > .services > .services-box1 {
+                    grid-area: serv-box1;
+                    background-color: lightgreen;
+                }
+                body > main > .main-left > .services > .services-box2 {
+                    grid-area: serv-box2;
+                    background-color: lightgreen;
+                }
+                body > main > .main-left > .services > .services-box3 {
+                    grid-area: serv-box3;
+                    background-color: lightgreen;
+                }
+
+            body > main > .main-left >.freelance {
+                background-color: lightblue;
+                grid-area: freelance;
+            }
+
+            body > main > aside {
+                background-color: lightseagreen;
+                grid-area: aside;
+            }
+
+    body > footer {
+        background-color: lightpink;
+        grid-area: foot;
+    }
