@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: 50px 150px 400px 50px;
+    grid-template-rows: 50px 100px 550px 50px;
     grid-gap: 10px;
     grid-template-areas:
     "hed"
@@ -10,9 +10,8 @@ body {
 }
 
     body > header {
-        background-color: #eee;
         grid-area: hed;
-        display: inline-grid;
+        display: grid;
         grid-template-columns: 200px 1fr 300px;
         gap: 10px;
         grid-template-areas:
@@ -122,5 +121,106 @@ body {
 
     body > footer {
         background-color: lightpink;
-        grid-area: foot;
+    }
+
+
+    @media (max-width: 960px) {
+
+        body > header {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+            "logo social";
+        }
+
+            body > header > #hide-responsive-design {
+                display: none;
+            }
+        
+            body > main {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "main-left";
+            }
+
+            body > main > #hide-responsive-design {
+                display: none;
+            }
+
+            body > main > .main-left{
+                grid-template-rows: 1fr 1fr 50px;
+                grid-template-areas:
+                "services"
+                "test"
+                "freelance";  
+            }
+
+                body > main > .main-left > .services {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                    "serv-hed serv-hed"
+                    "serv-box1 serv-box2"; 
+                }
+
+                body > main > .main-left > .services > #hide-responsive-design {
+                    display: none;
+
+                }
+    }
+
+    @media  (max-width: 480px) {
+
+        body {
+            display: grid;
+            grid-template-rows: 50px 50px 500px 50px;
+            grid-gap: 10px;
+            grid-template-areas:
+            "hed"
+            "hero"
+            "main"
+            "foot";
+        }
+
+            body > header {
+                grid-area: hed;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                grid-template-areas:
+                "logo";
+            }
+
+                body > header > .social {
+                    display: none;
+                }
+
+            body > main > .main-left{
+                grid-template-rows: 1fr 50px 1fr;
+                gap: 10px;
+                grid-template-areas:
+                "services"
+                "freelance"
+                "test";  
+            }
+
+                body > main > .main-left > .services {
+                    grid-template-columns: 1fr;
+                    grid-template-areas:
+                    "serv-hed"
+                    "serv-box1"
+                    "serv-box2"
+                    "serv-box3"; 
+                }
+                    
+                    body > main > .main-left > .services > #hide-responsive-design {
+                        display: grid;
+                    }
+ 
+                body > main > .main-left > .testimonials {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                    grid-template-areas:
+                    "test-hed"
+                    "test-box1"
+                    "test-box2";
+                }
     }
